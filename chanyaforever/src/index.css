@@ -1,0 +1,616 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(135deg,
+      #ff4fa1 0%,
+      #7b2ff7 50%,
+      #4338ca 100%);
+  color: white;
+}
+
+section {
+  padding: 100px 20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar h2 {
+  font-size: 1.7rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffd6f1;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.hero p {
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 1.3rem;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.hero button {
+  margin-top: 40px;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: white;
+  color: #7b2ff7;
+
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: translateY(-5px);
+}
+
+.hero-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.glow-1 {
+  top: 100px;
+  left: 100px;
+  background: #ff78c4;
+}
+
+.glow-2 {
+  bottom: 100px;
+  right: 100px;
+  background: #9d6bff;
+}
+
+/* =========================
+   FRIENDSHIP COUNTER
+========================= */
+
+.counter {
+  text-align: center;
+}
+
+.counter h2 {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 800;
+}
+
+.counter p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 60px;
+}
+
+.timeline-card {
+  margin-bottom: 25px;
+
+  padding: 30px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.timeline-card span {
+  color: #ffd1ea;
+  font-weight: bold;
+}
+
+.timeline-card h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.timeline-card p {
+  line-height: 1.8;
+}
+
+/* =========================
+   MEMORY CAROUSEL
+========================= */
+
+.carousel {
+  text-align: center;
+}
+
+.carousel h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.memory-card {
+  max-width: 700px;
+  margin: auto;
+
+  padding: 60px 40px;
+  border-radius: 25px;
+
+  font-size: 1.5rem;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.buttons button {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  background: white;
+  color: #7b2ff7;
+}
+
+/* =========================
+   REASONS
+========================= */
+
+.reasons h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 60px;
+}
+
+.reasons-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  gap: 25px;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.reason-card {
+  padding: 30px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+
+  transition: 0.3s;
+}
+
+.reason-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+}
+
+.gallery-grid {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   DESTINY SECTION
+========================= */
+
+.destiny {
+  text-align: center;
+}
+
+.destiny h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+
+.destiny p {
+  max-width: 850px;
+  margin: auto;
+
+  line-height: 2;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+  display: flex;
+  justify-content: center;
+}
+
+.letter-box {
+  max-width: 900px;
+
+  padding: 60px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.letter-box h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.letter-box p {
+  line-height: 2;
+  font-size: 1.15rem;
+}
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+  text-align: center;
+}
+
+.music-player audio {
+  width: min(700px, 90%);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+
+  animation: floatParticle 15s linear infinite;
+}
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+/* =========================
+   ANIMATED STARS
+========================= */
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.star {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+  background: white;
+
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* =========================
+   GLASS CARD EFFECT
+========================= */
+
+.timeline-card,
+.reason-card,
+.memory-card,
+.letter-box {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b14cff;
+  border-radius: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .memory-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+    padding: 30px;
+
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .memory-card:hover {
+    transform: translateY(-10px) scale(1.03);
+  }
+
+  .memory-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .memory-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+/* GRID */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CARD */
+.flip-card {
+  perspective: 1000px;
+}
+
+/* INNER */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* FLIP EFFECT */
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  backface-visibility: hidden;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* FRONT */
+.flip-front span {
+  font-size: 3rem;
+}
+
+/* BACK */
+.flip-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.flip-back p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .hero p,
+  .destiny p,
+  .letter-box p {
+    font-size: 1rem;
+  }
+
+  .timeline h2,
+  .gallery h2,
+  .reasons h2,
+  .destiny h2 {
+    font-size: 2.3rem;
+  }
+
+  .letter-box {
+    padding: 35px;
+  }
+}
